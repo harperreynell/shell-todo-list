@@ -28,6 +28,7 @@ function print_help() {
 	echo "	Type in 2 for adding a task"
 	echo "	Type in 3 for deleting a task"
 	echo "	Type in 4 for printing help"
+	echo "	Type in 99 for exiting the program"
 }
 
 print_help
@@ -47,6 +48,19 @@ do
 			if [ $choice = 3 ]
 			then
 				delete_task
+			else
+				if [ $choice = 4 ]
+				then
+					print_help
+				else
+					if [ $choice = 99 ]
+					then
+						break
+					else
+						echo "No correct option, printing help"
+						print_help
+					fi
+				fi
 			fi
 		fi
 	fi
