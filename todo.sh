@@ -23,10 +23,18 @@ function delete_task() {
 	sed -i "${id}d" $filename
 }
 
+function print_help() {
+	echo "	Type in 1 for printing your tasks"
+	echo "	Type in 2 for adding a task"
+	echo "	Type in 3 for deleting a task"
+	echo "	Type in 4 for printing help"
+}
 
+print_help
 
 while true
 do
+	echo -n "Type in what you want to do: "
 	read choice
 	if [ $choice = 1 ]
 	then
