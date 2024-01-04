@@ -37,31 +37,26 @@ while true
 do
 	echo -n "Type in what you want to do: "
 	read choice
-	if [ $choice = 1 ]
-	then
-		print_tasks
-	else
-		if [ $choice = 2 ]
-		then
+
+	case $choice in
+		1)
+			print_tasks
+			;;
+		2)
 			add_task
-		else
-			if [ $choice = 3 ]
-			then
-				delete_task
-			else
-				if [ $choice = 4 ]
-				then
-					print_help
-				else
-					if [ $choice = 99 ]
-					then
-						break
-					else
-						echo "No correct option, printing help"
-						print_help
-					fi
-				fi
-			fi
-		fi
-	fi
+			;;
+		3)
+			delete_task
+			;;
+		4)
+			print_help
+			;;
+		99)
+			break
+			;;
+		*)
+			echo "No correct option, printing help"
+			print_help
+			;;
+	esac
 done
